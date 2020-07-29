@@ -1,0 +1,3 @@
+[submodule "flutter_chat_ui"]
+	path = flutter_chat_ui
+	url = https://github.com/ritviksharma4/ChatBotUI
