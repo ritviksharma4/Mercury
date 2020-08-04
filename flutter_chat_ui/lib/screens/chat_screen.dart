@@ -12,7 +12,8 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  _buildMessage(Message message, bool isMe) {
+  TextEditingController controller =  TextEditingController();
+	_buildMessage(Message message, bool isMe) {
     final Container msg = Container(
       margin: isMe
           ? EdgeInsets.only(
@@ -96,6 +97,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           Expanded(
             child: TextField(
+							controller: controller,
               textCapitalization: TextCapitalization.sentences,
               onChanged: (value) {},
               decoration: InputDecoration.collapsed(
@@ -108,8 +110,19 @@ class _ChatScreenState extends State<ChatScreen> {
             iconSize: 25.0,
             color: Theme.of(context).primaryColor,
             onPressed: (
-//                IconData sendText = IconData(0xe163)
-                ) {},
+               // IconData sendText = IconData(0xe163)
+						) {
+									messages.insert(0,
+													Message(
+																	sender: Ritvik,
+																	time: 'now',
+																	text: controller.text,
+																	)
+													);
+									setState((){});
+									//print(messages[0].time + '\n'+ messages[0].text);
+										
+						},
           ),
         ],
       ),

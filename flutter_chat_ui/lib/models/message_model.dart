@@ -12,6 +12,13 @@ class Message {
     this.time,
     this.text,
   });
+//	static makeMessage(User user, String time, String text){
+//					return new Message({
+//									this.sender,
+//									this.time,
+//									this.text,
+//					});
+//	}
 }
 
 // YOU - current user
@@ -33,8 +40,13 @@ final User ChatBot = User(
 List<User> favorites = [ChatBot];
 
 List<Message> messages = [
-
-  Message(
+	Message(
+    sender: ChatBot,
+    time: '4:30 PM',
+    text: 'Nice to hear, See ya!',
+  ),
+  
+	Message(
     sender: ChatBot,
     time: '4:30 PM',
     text: 'Nice to hear, See ya!',
