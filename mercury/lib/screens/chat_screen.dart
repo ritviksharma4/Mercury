@@ -135,7 +135,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       time: (new DateTime.now().hour).toString() + ':' + mins,
                       text: msgFromUser,
                     ));
-                service.main([""]);
+                var bla = await service.main([msgFromUser]);
+
                 // print("Sending to Server.." + msgFromUser);
                 // var serverResponse = await ChatServicer.sndMsg(msgFromUser);
                 // print(serverResponse);
@@ -146,7 +147,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       sender: ChatBot,
                       time: (new DateTime.now().hour).toString() + ':' + mins,
                       // text: await ((ChatServicer().rcvMsg()).toString()),
-                      text: "hey!",
+                      text: bla,
                     ));
                 setState(() {});
               }

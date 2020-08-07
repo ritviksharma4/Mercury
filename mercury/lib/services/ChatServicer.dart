@@ -10,9 +10,9 @@ import 'package:mercury/protos_generated/protos/helloworld.pbgrpc.dart';
 import 'package:mercury/protos_generated/protos/helloworld.pbjson.dart';
 
 class ChatServicer {
-  Future<void> main(List<String> args) async {
+  Future<String> main(List<String> args) async {
     final channel = ClientChannel(
-      'localhost',
+      '10.0.2.2',
       port: 50051,
       options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
     );
@@ -22,7 +22,7 @@ class ChatServicer {
 
     try {
       final response = await stub.sayHello(HelloRequest()..name = name);
-      print('Greeter client received: ${response.message}');
+      return response.message.toString();
     } catch (e) {
       print('Caught error: $e');
     }
