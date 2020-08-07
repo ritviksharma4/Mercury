@@ -2,7 +2,7 @@
  
 For Flutter : 
 
-From flutter_chat_ui/lib dir
+From mercury/lib dir
 
 pub global activate protoc_plugin 19.0.1
 export PATH="$PATH":"$HOME/.pub-cache/bin"
@@ -13,7 +13,7 @@ protoc --dart_out=grpc:protos_generated protos/msgExchange.proto
 syntax = "proto3";
 
 service MessageTransmission {
-  rpc sendMessage (Message) returns (stream Message) {}
+  rpc sendMessage (Message) returns (Message) {}
 }
 
 message Message {

@@ -1,0 +1,36 @@
+/*
+ 
+For Flutter : 
+
+From mercury/lib dir
+
+pub global activate protoc_plugin 19.0.1
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+protoc --dart_out=grpc:protos_generated protos/helloworld.proto
+ 
+ */
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}

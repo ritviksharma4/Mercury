@@ -23,12 +23,12 @@ class MessageTransmissionClient extends $grpc.Client {
       {$grpc.CallOptions options})
       : super(channel, options: options);
 
-  $grpc.ResponseStream<$0.Message> sendMessage($0.Message request,
+  $grpc.ResponseFuture<$0.Message> sendMessage($0.Message request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$sendMessage, $async.Stream.fromIterable([request]),
         options: options);
-    return $grpc.ResponseStream(call);
+    return $grpc.ResponseFuture(call);
   }
 }
 
@@ -40,16 +40,16 @@ abstract class MessageTransmissionServiceBase extends $grpc.Service {
         'sendMessage',
         sendMessage_Pre,
         false,
-        true,
+        false,
         ($core.List<$core.int> value) => $0.Message.fromBuffer(value),
         ($0.Message value) => value.writeToBuffer()));
   }
 
-  $async.Stream<$0.Message> sendMessage_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Message> request) async* {
-    yield* sendMessage(call, await request);
+  $async.Future<$0.Message> sendMessage_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Message> request) async {
+    return sendMessage(call, await request);
   }
 
-  $async.Stream<$0.Message> sendMessage(
+  $async.Future<$0.Message> sendMessage(
       $grpc.ServiceCall call, $0.Message request);
 }
