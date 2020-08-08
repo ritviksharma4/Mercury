@@ -1,0 +1,23 @@
+/*
+ 
+For Flutter : 
+
+From mercury/lib dir
+
+pub global activate protoc_plugin 19.0.1
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+protoc --dart_out=grpc:protos_generated protos/messenger.proto
+ 
+ */
+
+syntax = "proto3";
+
+service Messenger {
+  rpc SendMessage (Message) returns (Message) {}
+}
+
+message Message {
+  string msg = 1;
+}
+
+

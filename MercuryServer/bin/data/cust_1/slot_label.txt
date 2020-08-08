@@ -1,0 +1,17 @@
+PAD
+UNK
+O
+qty
+B-restaurant_name
+B-food_type
+B-food_name
+B-show_type
+B-time
+B-show_name
+B-place_name
+I-restaurant_name
+I-food_type
+I-food_name
+I-show_type
+I-show_name
+I-place_name

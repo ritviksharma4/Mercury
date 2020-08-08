@@ -1,0 +1,11 @@
+number leave_type O O trans_type O O hr.emp_type O O O time_frame
+number leave_type O O trans_type O O hr.emp_type O O O time_frame
+number leave_type O O trans_type O hr.emp_type O O time_frame O O O O
+hr.emp_type O O O number O O time_frame
+hr.emp_type O number O trans_type O O time_frame
+O O O O O O O O O time O O time O
+O O O O O O O time_frame O
+O O O O O O O O O time O O time O O O O O O O O O O O number O 
+O O O O O number O O O O O O
+O O O O O O
+O O O O O O O

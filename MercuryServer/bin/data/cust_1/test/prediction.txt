@@ -1,0 +1,11 @@
+<hr.leave_transact_policy> -> [11.75:number] [CL:leave_type] will be [credited:trans_type] to the [leader:hr.emp_type] leave balance every [month:time_frame]
+<hr.leave_transact_policy> -> [1.5001:number] [CL:leave_type] will be [credited:trans_type] to the [consultant:hr.emp_type] leave balance every [month:time_frame]
+<hr.leave_transact_policy> -> [2222222:number] [CL:leave_type] will be [credited:trans_type] the [consultant:hr.emp_type] leave balance [year:time_frame] as a bonus leave
+<hr.leave_entitle> -> [Consultants:hr.emp_type] are entitled to [18:number] leaves per [year:time_frame]
+<hr.leave_entitle> -> [Consultants:hr.emp_type] get [1.5:number] leaves [credited:trans_type] for every [month:time_frame]
+<hr.office_time> -> The general work timings for the office are from [10_34:time] am to [6_45:time] pm
+<hr.office_time> -> leaders are expected to work diligently for [9:time_frame] hours
+<hr.office_time> -> The general work timings for the office are from [9_15:time] am to [6_45:time] pm within which the leaders are expected to work diligently for [9:number] hours
+<hr.office_time> -> The organization shall observe a [5:number] day week from Monday to Friday
+<descript> -> Technology has evolved a great deal
+<descript> -> It has become highly specialized and fragmented

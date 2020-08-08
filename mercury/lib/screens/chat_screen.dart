@@ -162,24 +162,17 @@ class _ChatScreenState extends State<ChatScreen> {
                       text: msgFromUser,
                     ));
                 var bla = await service.main([msgFromUser]);
-                // print("Sending to Server.." + msgFromUser);
-                // var serverResponse = await ChatServicer.sndMsg(msgFromUser);
-                // print(serverResponse);
+               
                 controller.clear();
                 messages.insert(
                     0,
                     Message(
                       sender: ChatBot,
                       time: (new DateTime.now().hour).toString() + ':' + mins,
-                      // text: await ((ChatServicer().rcvMsg()).toString()),
                       text: bla,
                     ));
                 setState(() {});
               }
-              // var msgFromServer = await ChatServicer().rcvMsg();
-              // print("Receiving from Server...");
-              // print(msgFromServer);
-              // print(msgFromServer.toString());
             },
           ),
         ],

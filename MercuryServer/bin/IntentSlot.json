@@ -1,0 +1,18 @@
+{
+  "intent": "OrderFood",
+  "slots": {
+    "qty": [
+      "1",
+      "3"
+    ],
+    "food_type": [
+      "non veg",
+      ""
+    ],
+    "food_name": [
+      "pizza",
+      "cold drinks"
+    ],
+    "restaurant_name": "dominos"
+  }
+}

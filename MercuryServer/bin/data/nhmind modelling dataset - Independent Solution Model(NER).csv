@@ -1,0 +1,10 @@
+Sentences ,annotated sentence
+1.75 CL will be credited to the leader’s leave balance every month.,1.75(number) CL(leave_type) will be credited(trans_type) to the leader’s(emp_type) leave balance every month(time_frame) .
+1.5 CL will be credited to the consultant leave balance every month.,1.5(number) CL(leave_type) will be credited(trans_type) to the consultant’s(emp_type) leave balance every month(time_frame) .
+2 CL will be credited the consultant leave balance year as a bonus leave.,1.5(number) CL(leave_type) will be credited(trans_type) to the consultant’s(emp_type) leave balance every year(time_frame) . as a bonus leave.
+Consultants are entitled to 18 leaves per year.,Consultants(emp_type) are entitled to 18(number) leaves per year(time_frame) .
+Consultants get 1.5 leaves credited for every month.,Consultants(emp_type) get 1.5(number) leaves credited(trans_type) for every month(time_frame) .
+The general work timings for the office are from 9:15 am to 6:45 pm,The general work timings for the office are from 9:15(time) am to 6:45(time) pm.
+leaders are expected to work diligently for 9 hours,leaders are expected to work diligently for 9(time_frame) hours
+"The general work timings for the office are from 9:15 am to 6:45 pm, within which the leaders are expected to work diligently for 9(time_frame) hours. ","The general work timings for the office are from 9:15(time) am to 6:45(time) pm, within which the leaders are expected to work diligently for 9(number) hours. "
+The organization shall observe a 5-day week from Monday to Friday.,The organization shall observe a 5(number) -day week from Monday to Friday.

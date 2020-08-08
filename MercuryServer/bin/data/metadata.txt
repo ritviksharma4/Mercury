@@ -1,0 +1,13 @@
+examples - 10
+slots -  7 
+intent** - 0
+unique_slots -->  {'O', 'emp_type', 'leave_type', 'number', 'time', 'time_frame', 'trans_type'}
+
+
+features -->
+
+Is the word in uppercase?
+Is the word present in the name of cities?
+What are the previous words?
+What are the next words?
+What is the previous slots?
