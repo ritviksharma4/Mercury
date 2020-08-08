@@ -107,7 +107,6 @@ class _ChatScreenState extends State<ChatScreen> {
             speechText = val.recognizedWords;
             controller.clear();
             controller.text = speechText;
-            // print("User Said -> " + speechText);
           }),
         );
       }
@@ -121,7 +120,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8.0),
       height: 70.0,
-      color: Colors.white,
+      color: Colors.black,
       child: Row(
         children: <Widget>[
           IconButton(
@@ -132,8 +131,10 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           Expanded(
             child: TextField(
-              keyboardType: TextInputType.multiline,
               controller: controller,
+              textInputAction: TextInputAction.newline,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
               textCapitalization: TextCapitalization.sentences,
               onChanged: (value) {},
               decoration: InputDecoration.collapsed(

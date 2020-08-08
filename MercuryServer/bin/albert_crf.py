@@ -2,6 +2,7 @@ from test.predict import predict
 import argparse
 import json
 from test.predict import predict
+from word2number import w2n
 
 prediction = {}
 
@@ -44,11 +45,11 @@ class AlbertCRF(object):
                     send2ClientFile.write("********ORDER DETAILS********\n\n")
 
                 if (clientMsgJSON['slots']['food_type'][index] == ''):
-                    send2ClientFile.write(clientMsgJSON['slots']['qty'][index] + ' ' + clientMsgJSON['slots']['food_name'][index]
+                    send2ClientFile.write(str(clientMsgJSON['slots']['qty'][index]) + ' ' + clientMsgJSON['slots']['food_name'][index]
                      + '\n')
 
                 else:
-                    send2ClientFile.write(clientMsgJSON['slots']['qty'][index] + ' ' + clientMsgJSON['slots']['food_type'][index]
+                    send2ClientFile.write(str(clientMsgJSON['slots']['qty'][index]) + ' ' + clientMsgJSON['slots']['food_type'][index]
                     + ' ' + clientMsgJSON['slots']['food_name'][index] + '\n')
                 
             send2ClientFile.write("\n" + clientMsgJSON['slots']['restaurant_name'] + " has received your order!")
