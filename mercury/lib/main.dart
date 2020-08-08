@@ -12,8 +12,9 @@ class MyApp extends StatelessWidget {
       title: 'Mercury',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.red,
-        accentColor: Color(0xFFFEF9EB),
+				brightness: Brightness.dark,
+        primaryColor: Color(0xfffb4934),//Color(0xFF689D6A)//aqua//,
+        accentColor: Color(0xFF282828),
       ),
       home: HomeScreen(),
     );
