@@ -41,7 +41,7 @@ class AlbertCRF(object):
             for index in range(orderLength):
 
                 if (index == 0):
-                    send2ClientFile.write("*********ORDER DETAILS*********\n\n")
+                    send2ClientFile.write("********ORDER DETAILS********\n\n")
 
                 if (clientMsgJSON['slots']['food_type'][index] == ''):
                     send2ClientFile.write(clientMsgJSON['slots']['qty'][index] + ' ' + clientMsgJSON['slots']['food_name'][index]

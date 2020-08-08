@@ -6,7 +6,6 @@ import 'dart:io';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class ChatScreen extends StatefulWidget {
-	
   final User user;
   ChatScreen({this.user});
 
@@ -15,14 +14,14 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  String speechText = "nothing to see here";
-	stt.SpeechToText _speech;
-	bool _isListening = false;
+  String speechText = "Dummy String";
+  stt.SpeechToText _speech;
+  bool _isListening = false;
 
   @override
   void initState() {
     super.initState();
-		_speech = stt.SpeechToText();
+    _speech = stt.SpeechToText();
   }
 
   final ChatServicer service;
@@ -95,27 +94,28 @@ class _ChatScreenState extends State<ChatScreen> {
     );
   }
 
-	void _listen() async {
-			if (!_isListening) {
-					bool available = await _speech.initialize(
-					 onStatus: (val) => print('onStatus: $val'),
-					 onError: (val) => print('onError: $val'),
-					);
-			if (available) {
-			     setState(() => _isListening = true);
-					_speech.listen(
-					onResult: (val) => setState(() {
-			       print("\n\n\n blablabloobloo"+speechText+"\n\n\n");
-
-					}),
-					);
-					}
-									    
-					} else {
-						setState(() => _isListening = false);
-						_speech.stop();   
-			}
-	}
+  void _listen() async {
+    if (!_isListening) {
+      bool available = await _speech.initialize(
+        onStatus: (val) => print('onStatus: $val'),
+        onError: (val) => print('onError: $val'),
+      );
+      if (available) {
+        setState(() => _isListening = true);
+        _speech.listen(
+          onResult: (val) => setState(() {
+            speechText = val.recognizedWords;
+            controller.clear();
+            controller.text = speechText;
+            // print("User Said -> " + speechText);
+          }),
+        );
+      }
+    } else {
+      setState(() => _isListening = false);
+      _speech.stop();
+    }
+  }
 
   _buildMessageComposer() {
     return Container(
@@ -128,10 +128,11 @@ class _ChatScreenState extends State<ChatScreen> {
             icon: Icon(Icons.mic),
             iconSize: 30.0,
             color: Theme.of(context).primaryColor,
-						onPressed: _listen,
+            onPressed: _listen,
           ),
           Expanded(
             child: TextField(
+              keyboardType: TextInputType.multiline,
               controller: controller,
               textCapitalization: TextCapitalization.sentences,
               onChanged: (value) {},
@@ -161,9 +162,9 @@ class _ChatScreenState extends State<ChatScreen> {
                       time: (new DateTime.now().hour).toString() + ':' + mins,
                       text: msgFromUser,
                     ));
-                var bla = await service.main([msgFromUser]);
-               
+                setState(() {});
                 controller.clear();
+                var bla = await service.main([msgFromUser]);
                 messages.insert(
                     0,
                     Message(

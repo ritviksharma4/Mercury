@@ -18,7 +18,7 @@ def get_device(pred_config):
 
 
 def get_args(pred_config):
-    pred_config.model_dir = str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/albert_fine_tuned"
+    pred_config.model_dir = str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/albert_fine_tuned"
     return torch.load(os.path.join(pred_config.model_dir, 'training_args.bin'))
 
 
@@ -29,7 +29,7 @@ def load_model(pred_config, args, device):
         raise Exception("Model doesn't exists! Train first!")
 
     try:
-        args.model_dir = str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/albert_fine_tuned"
+        args.model_dir = str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/albert_fine_tuned"
         model = MODEL_CLASSES[args.model_type][1].from_pretrained(args.model_dir,
                                                                   args=args,
                                                                   intent_label_lst=get_intent_labels(args),
@@ -244,7 +244,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--input_sent", default="No sentence recognised", type=str, help="Input sentence for prediction")
-    parser.add_argument("--model_dir", default=str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/albert_fine_tuned", type=str, help="Path to save, load model")
+    parser.add_argument("--model_dir", default=str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/albert_fine_tuned", type=str, help="Path to save, load model")
 
     parser.add_argument("--batch_size", default=32, type=int, help="Batch size for prediction")
     parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")

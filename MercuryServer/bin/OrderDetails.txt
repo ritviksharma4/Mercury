@@ -1,6 +1,5 @@
-*********ORDER DETAILS*********
+********ORDER DETAILS********
 
-1 non veg pizza
-3 cold drinks
+2 non veg pizzas
 
-dominos has received your order!
+Dominos has received your order!

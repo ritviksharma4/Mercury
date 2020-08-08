@@ -26,13 +26,13 @@ MODEL_PATH_MAP = {
 
 
 def get_intent_labels(args):
-    data_dir = str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/data"
+    data_dir = str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/data"
     task = 'cust_1'
     return [label.strip() for label in open(os.path.join(data_dir, task, args.intent_label_file), 'r', encoding='utf-8')]
 
 
 def get_slot_labels(args):
-    data_dir = str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/data"
+    data_dir = str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/data"
     task = 'cust_1'
     return [label.strip() for label in open(os.path.join(data_dir, task, args.slot_label_file), 'r', encoding='utf-8')]
 

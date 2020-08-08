@@ -1,5 +1,7 @@
 import 'package:mercury/models/user_model.dart';
 
+String startTime;
+
 class Message {
   final User sender;
   final String
@@ -33,24 +35,7 @@ List<User> favorites = [ChatBot];
 List<Message> messages = [
   Message(
     sender: ChatBot,
-    time: '4:30 PM',
-    text: 'Have a Good Day!',
-  ),
-  Message(
-    sender: ChatBot,
-    time: '4:30 PM',
-    text:
-        '*********ORDER DETAILS*********\n3 non veg pizzas\n3 veg tacos\n1 cold drink\nDominos has received your order!',
-  ),
-  Message(
-    sender: Ritvik,
-    time: '4:30 PM',
-    text:
-        'I want to eat 3 non veg pizzas 3 veg tacos and 1 cold drink from Dominos',
-  ),
-  Message(
-    sender: ChatBot,
-    time: '4:30 PM',
+    time: "4:30 PM",
     text: 'Hey, Ritvik! What do you wanna have today?',
   ),
 ];
@@ -59,7 +44,7 @@ List<Message> messages = [
 List<Message> chats = [
   Message(
     sender: ChatBot,
-    time: '4:30 PM',
-    text: 'Have a Good Day!!',
-  )
+    time: "4:30 PM",
+    text: 'Hey, Ritvik! What do you wanna have today?',
+  ),
 ];
