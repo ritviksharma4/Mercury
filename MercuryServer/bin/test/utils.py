@@ -8,9 +8,11 @@ from seqeval.metrics import precision_score, recall_score, f1_score
 
 from transformers import BertConfig, DistilBertConfig, AlbertConfig
 from transformers import BertTokenizer, DistilBertTokenizer, AlbertTokenizer
-from pathlib import Path 
+from pathlib import Path
 
 from .model import JointBERT, JointDistilBERT, JointAlbert
+
+filePath = str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/data"
 
 MODEL_CLASSES = {
     'bert': (BertConfig, JointBERT, BertTokenizer),
@@ -26,13 +28,13 @@ MODEL_PATH_MAP = {
 
 
 def get_intent_labels(args):
-    data_dir = str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/data"
+    data_dir = filePath
     task = 'cust_1'
     return [label.strip() for label in open(os.path.join(data_dir, task, args.intent_label_file), 'r', encoding='utf-8')]
 
 
 def get_slot_labels(args):
-    data_dir = str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/data"
+    data_dir = filePath
     task = 'cust_1'
     return [label.strip() for label in open(os.path.join(data_dir, task, args.slot_label_file), 'r', encoding='utf-8')]
 

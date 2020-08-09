@@ -8,7 +8,7 @@ import 'package:grpc/grpc.dart';
 class ChatServicer {
   Future<String> main(List<String> args) async {
     final channel = ClientChannel(
-      '192.168.43.84',
+      '192.168.1.8',
       port: 50051,
       options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
     );

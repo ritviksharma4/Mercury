@@ -12,13 +12,14 @@ from .utils import init_logger, load_tokenizer, get_intent_labels, get_slot_labe
 
 logger = logging.getLogger(__name__)
 
+filePath = str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/albert_fine_tuned"
 
 def get_device(pred_config):
     return "cuda" if torch.cuda.is_available() and not pred_config.no_cuda else "cpu"
 
 
 def get_args(pred_config):
-    pred_config.model_dir = str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/albert_fine_tuned"
+    pred_config.model_dir = filePath
     return torch.load(os.path.join(pred_config.model_dir, 'training_args.bin'))
 
 
@@ -29,7 +30,7 @@ def load_model(pred_config, args, device):
         raise Exception("Model doesn't exists! Train first!")
 
     try:
-        args.model_dir = str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/albert_fine_tuned"
+        args.model_dir = filePath
         model = MODEL_CLASSES[args.model_type][1].from_pretrained(args.model_dir,
                                                                   args=args,
                                                                   intent_label_lst=get_intent_labels(args),
@@ -43,7 +44,7 @@ def load_model(pred_config, args, device):
 
 def read_input(pred_config):
     lines = []
-    line = pred_config.input_sent    
+    line = pred_config.input_sent
     line = line.strip()
     words = line.split()
     lines.append(words)
@@ -202,12 +203,12 @@ def predict(pred_config):
                 slot_preds_list[i].append(slot_label_map[slot_preds[i][j]])
 
     # Write to output file
-    collected_slots = {}   
+    collected_slots = {}
     active_slot_words = []
-    index = 0  
-    active_slot_name = None  
+    index = 0
+    active_slot_name = None
     for words, slot_preds, intent_pred in zip(lines, slot_preds_list, intent_preds):
-        info = {"intent": intent_label_lst[intent_pred]} 
+        info = {"intent": intent_label_lst[intent_pred]}
         for word, pred in zip(words, slot_preds):
             iter_slot_preds = iter(slot_preds)
             if pred != 'O':
@@ -227,7 +228,7 @@ def predict(pred_config):
                 else:
                     if len(active_slot_words) > 1:
                         for temp_index in range (1,len(active_slot_words)):
-                            active_slot_words[0] += ' ' + active_slot_words[temp_index]  
+                            active_slot_words[0] += ' ' + active_slot_words[temp_index]
                     collected_slots.setdefault(active_slot_name,[]).append(active_slot_words[0])
                     active_slot_words = [word]
                     active_slot_name = new_slot_name
@@ -244,7 +245,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--input_sent", default="No sentence recognised", type=str, help="Input sentence for prediction")
-    parser.add_argument("--model_dir", default=str(Path.home())+ "/github/ChatBotUI/MercuryServer/bin/albert_fine_tuned", type=str, help="Path to save, load model")
+    parser.add_argument("--model_dir", default=filePath, type=str, help="Path to save, load model")
 
     parser.add_argument("--batch_size", default=32, type=int, help="Batch size for prediction")
     parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")

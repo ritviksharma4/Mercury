@@ -12,8 +12,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
-        primaryColor: Color(0xfffb4934), //Color(0xFF689D6A)//aqua//,
+        primaryColor: Color(0xff1d2021), //Color(0xFF689D6A)//aqua//,
         accentColor: Color(0xFF282828),
+        fontFamily: 'FiraCode',
+        textTheme: Theme.of(context).textTheme.apply(
+          bodyColor: Color(0xff32302f),
+          displayColor: Color(0xff32302f),
+        ),
       ),
       home: HomeScreen(),
     );
