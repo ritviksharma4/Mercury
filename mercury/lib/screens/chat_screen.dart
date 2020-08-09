@@ -131,6 +131,9 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           Expanded(
             child: TextField(
+              style: TextStyle(
+                color: Color(0xff689d6a),
+              ),
               controller: controller,
               textInputAction: TextInputAction.newline,
               keyboardType: TextInputType.multiline,

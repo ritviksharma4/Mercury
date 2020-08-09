@@ -34,11 +34,6 @@ List<User> favorites = [ChatBot];
 
 List<Message> messages = [
   Message(
-    sender: BodegaCoders,
-    time: "4:30 PM",
-    text: 'Colour Test',
-  ),
-  Message(
     sender: ChatBot,
     time: "4:30 PM",
     text: 'Hey, BodegaCoders! What do you wanna have today?',
@@ -52,5 +47,4 @@ List<Message> chats = [
     time: "4:30 PM",
     text: 'Hey, BodegaCoders! What do you wanna have today?',
   ),
-
 ];

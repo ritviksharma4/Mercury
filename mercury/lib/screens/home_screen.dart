@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: IconButton(
           icon: Icon(Icons.menu),
           iconSize: 30.0,
-          color: Color(0xff689d6a),//Colors.white,
+          color: Color(0xff689d6a), //Colors.white,
           onPressed: () {},
         ),
         title: Text(
@@ -25,16 +25,15 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(
             fontSize: 28.0,
             fontWeight: FontWeight.bold,
-						color: Color(0xff1d2021),
+            color: Color(0xff689d6a),
           ),
-
         ),
         elevation: 0.0,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
             iconSize: 30.0,
-            color: Color(0xff689d6a),//Colors.white,
+            color: Color(0xff689d6a), //Colors.white,
             onPressed: () {},
           ),
         ],
@@ -45,7 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0x80689d6a),//Color(0xff32302f),//Theme.of(context).accentColor,
+                color: Color(
+                    0x80689d6a), //Color(0xff32302f),//Theme.of(context).accentColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30.0),
                   topRight: Radius.circular(30.0),

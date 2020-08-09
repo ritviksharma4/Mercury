@@ -12,7 +12,7 @@ from pathlib import Path
 
 from .model import JointBERT, JointDistilBERT, JointAlbert
 
-filePath = str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/data"
+filePath = str(Path.home())+ "/github/BodegaCoderzZz/MercuryServer/bin/data"
 
 MODEL_CLASSES = {
     'bert': (BertConfig, JointBERT, BertTokenizer),

@@ -12,7 +12,7 @@ from .utils import init_logger, load_tokenizer, get_intent_labels, get_slot_labe
 
 logger = logging.getLogger(__name__)
 
-filePath = str(Path.home())+ "/projects/ChatBotUI/MercuryServer/bin/albert_fine_tuned"
+filePath = str(Path.home())+ "/github/BodegaCoderzZz/MercuryServer/bin/albert_fine_tuned"
 
 def get_device(pred_config):
     return "cuda" if torch.cuda.is_available() and not pred_config.no_cuda else "cpu"

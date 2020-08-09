@@ -8,7 +8,7 @@ class RecentChats extends StatelessWidget {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0x87689d6a),//Color(0xff3c3836),//Colors.white,
+          color: Color(0x87689d6a), //Color(0xff3c3836),//Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),
@@ -19,7 +19,6 @@ class RecentChats extends StatelessWidget {
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),
           ),
-
           child: ListView.builder(
             itemCount: chats.length,
             itemBuilder: (BuildContext context, int index) {
@@ -60,7 +59,7 @@ class RecentChats extends StatelessWidget {
                               Text(
                                 chat.sender.name,
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.grey[300],
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -71,7 +70,7 @@ class RecentChats extends StatelessWidget {
                                 child: Text(
                                   chat.text,
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.grey[300],
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -87,7 +86,7 @@ class RecentChats extends StatelessWidget {
                           Text(
                             chat.time,
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.grey[100],
                               fontSize: 12.0,
                               fontWeight: FontWeight.bold,
                             ),
