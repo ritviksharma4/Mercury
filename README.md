@@ -1,10 +1,10 @@
 # Mercury
-by Bodega-CoderzZz
+by Ritvik Sharma
 
 # Overview
 - A Chatbot that can take Audio as Input and connect the user to some service
 	* like a telephone operator, but with instant messaging
-	* currently, we only have oredering of food, and our app is not connected to any buisness.
+	* currently, we only have oredering of food, and this app is not connected to any buisness.
 	* we do however successfully extract the intent of the user, and this information can be formatted as desired
 
 - For Example : Input -> “I would like to have *1 non veg Taco* and *3 veg Pizzas* and *three cool drinks* from *Dominos*”
@@ -71,26 +71,19 @@ by Bodega-CoderzZz
 
 ---
 
-## Partially complete Front End with Flutter
-- we now have a flutter UI
-- the template can now communicate with a simple grpc server and exchange text with it.
-- We are yet to connect our ML back-end to our UI, but there's at least smooth connection between the dart grpc server and the flutter client
-
-![alt text](images/ui-working.png "Working UI connects to Back End")
-
 
 ## full project overview:
 ![](images/index.png)
 
-- flutter front-end connects to the grpc server. user messages are sent
-- server recieves messages and executes a Python script to call on the ML model to process the user's message
-- the script writes a file with the predictions
-the server reads this file and gives a response to the user that lists their order.
-- currently our app does not interface with any buisness. but it extracts data that can easily be modified for integration with buisnesses like swiggy, zomato etc.
+- Flutter front-end connects to the grpc server. user messages are sent
+- Server recieves messages and executes a Python script to call on the ML model to process the user's message
+- The script writes a file with the predictions
+The server reads this file and gives a response to the user that lists their order.
+- Currently this app does not interact with any buisness. but it extracts data that can easily be modified for integration with buisnesses like swiggy, zomato etc.
 
 ---
 
-# installation
+# Installation
 
 ## Dependencies
 - alBERT:
@@ -135,7 +128,7 @@ the server reads this file and gives a response to the user that lists their ord
 	(or)
 	$ dart pub get
 	```
-these will automatically update dependencies fot the app, and the server respectively.
+These will automatically update dependencies fot the app, and the server respectively.
 
 - In ./mercury/lib/services/ChatServicer.dart, change the IP address 192.168.x.x to match your system's IP.
 
