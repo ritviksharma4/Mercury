@@ -1,5 +1,5 @@
 # Mercury
-by Ritvik Sharma
+by Akansh Bharadwaj, Raghu Ranganathan and Ritvik Sharma
 
 # Overview
 - A Chatbot that can take Audio as Input and connect the user to some service
