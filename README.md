@@ -1,4 +1,4 @@
-# Mercury
+# Mercury - https://mercury.ritvik-sharma.com/
 by Akansh Bharadwaj, Raghu Ranganathan and Ritvik Sharma
 
 # Overview
